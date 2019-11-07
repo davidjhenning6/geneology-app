@@ -1,0 +1,639 @@
+html {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+    background-color: white;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+
+
+
+
+
+hr {
+    color: blue;
+}
+
+#grid1 {
+    background-color: white;
+}
+
+
+th{
+    min-width: 100px;
+}
+td{
+    min-width: 120px;
+    white-space: nowrap;
+}
+
+
+#header{
+    height: 100px;
+    background-color: rgb(240, 240, 240);
+    border-bottom: solid;
+    border-bottom-color: rgb(220, 220, 220); 
+    border-width: 2px;
+}
+
+#status{
+    background-color: white;
+    border-bottom: solid;
+    border-bottom-color: rgb(220, 220, 220); 
+    border-width: 1px;
+}
+
+#statusDisplay{
+    background-color: white;
+    height: 84px;
+    overflow-y: scroll;
+    border-color: rgb(220, 220, 220);
+    border-style: solid;
+    border-width: 2px;
+    line-height: 1.25;
+    margin-top: 8px;
+    margin-bottom: 5px;
+
+}
+
+#fileRow{
+    min-height: 35px;
+    max-height: 150px;
+}
+
+#tSize{
+    border-style: none;
+}
+
+#tableHeads{
+    color: black;
+    background-color: rgb(240, 240, 240);
+    height: 60px;
+    border-color: rgb(190, 190, 190);
+    border-style: solid;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+}
+
+#tableHeads2{
+    color: black;
+    background-color: rgb(240, 240, 240);
+    height: 40px;
+    border-color: rgb(190, 190, 190);
+    border-style: solid;
+    border-left: none;
+    border-top: none;
+    border-right:none;
+}
+
+#tableBodies{
+    
+    height: 150px;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    text-align: center;
+}
+
+#tableBodies2{
+    color: black;
+    height: 150px;
+    border-color: rgb(190, 190, 190);
+    border-style: solid;
+    border-bottom: solid;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+
+#fileName{
+    color: blue;
+    text-decoration: underline;
+}
+
+#sideBar{
+    background-color: white;
+}
+
+/*buttons*/
+
+#upload{
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+    background-color: deepskyblue;
+    border-style: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    height: 40px;
+    width: 140px;
+
+}
+
+#upload:hover{
+    background-color: rgb(150, 150, 150);
+}
+
+
+
+#submit{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 140px;
+    background-color: deepskyblue;
+    border-style: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+#submit:hover{
+    background-color: rgb(150, 150, 150);
+}
+
+#create{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 140px;
+    background-color: deepskyblue;
+    border-style: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+#create:hover{
+    background-color: rgb(150, 150, 150);
+}
+
+#add{
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 140px;
+    background-color: deepskyblue;
+    border-style: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+#add:hover{
+    background-color: rgb(150, 150, 150);
+}
+
+#ascend{
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 140px;
+    background-color: deepskyblue;
+    border-style: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+#ascend:hover{
+    background-color: rgb(150, 150, 150);
+}
+
+#descend{
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 140px;
+    background-color: deepskyblue;
+    border-style: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    line-height: 1.25;
+
+}
+
+#descend:hover{
+    background-color: rgb(150, 150, 150);
+}
+
+/*dropdown window*/
+
+#filePicker{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    height: 80px;
+    width: 150px;
+    background-color: deepskyblue;
+    border-style: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+
+.dropbtn {
+    background-color: deepskyblue;
+    color: white;
+    margin-top: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 140px;
+    
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: rgb(150, 150, 150);
+}
+
+/*drop up*/
+
+
+.dropup {
+    
+    display: inline-block;
+}
+
+.dropup-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    bottom:50px;
+    z-index: 1;
+}
+
+.dropup-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropup-content a:hover {background-color: #ccc}
+
+.dropup:hover .dropup-content {
+    display: block;
+}
+
+.dropup:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+/*text fields*/
+
+#an{
+    background-color: rgb(240, 240, 240);
+    border-bottom: solid;
+    border-bottom-color: rgb(220, 220, 220); 
+    border-width: 2px;
+}
+#de{
+    background-color: rgb(240, 240, 240);
+    border-bottom: solid;
+    border-bottom-color: rgb(220, 220, 220); 
+    border-width: 2px;
+}
+#ad{
+    background-color: rgb(240, 240, 240);
+    border-bottom: solid;
+    border-bottom-color: rgb(220, 220, 220); 
+    border-width: 2px;
+    
+}
+
+#field{
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    height: 35px;
+    width: 200px;
+}
+
+#accept{
+    background-color: rgb(240, 240, 240);
+}
+
+#enter{
+    margin-top: 15px;
+    height: 40px;
+    width: 50px;
+    background-color: deepskyblue;
+    border-style: none;
+    color: white;
+    text-align: center;
+}
+
+#enter:hover{
+    background-color: rgb(150, 150, 150);
+}
+
+#A4Header{
+
+}
+
+#trash{
+    margin-top: 50px;
+    margin-left: 40px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    height: 60px;
+    width: 4000px;
+    background-color: deepskyblue;
+    border-style: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+#user{
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: black;
+    
+}
+
+#password{
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+#database{
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+#userI{
+    color: black;
+    
+    
+}
+
+#passwordI{
+    color: black;
+}
+
+#databaseI{
+    color: black;
+}
+
+#login{
+    background-color: gray;
+    margin-top: 15px;
+    height: 30px;
+    width: 100px;
+    border-style: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    line-height: 1.25;
+}
+
+#gaia{
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 140px;
+    background-color: deepskyblue;
+    border-style: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    line-height: 1.25;
+
+}
+
+#gaia:hover{
+    background-color: rgb(150, 150, 150);
+}
+
+#aether{
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 140px;
+    background-color: deepskyblue;
+    border-style: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    line-height: 1.25;
+
+}
+
+#aether:hover{
+    background-color: rgb(150, 150, 150);
+}
+
+#getData{
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 140px;
+    background-color: deepskyblue;
+    border-style: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    line-height: 1.25;
+
+}
+
+#getData:hover{
+    background-color: rgb(150, 150, 150);
+}
+
+#queryPicker{
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    height: 80px;
+    width: 230px;
+    background-color: deepskyblue;
+    border-style: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+#statusDisplay2{
+    background-color: white;
+    height: 150px;
+    overflow-y: scroll;
+    border-color: rgb(220, 220, 220);
+    border-style: solid;
+    border-width: 2px;
+    line-height: 1.25;
+    margin-top: 20px;
+    margin-bottom: 5px;
+
+}
+
+#enterQ1{
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 140px;
+    background-color: deepskyblue;
+    border-style: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    line-height: 1.25;
+
+}
+
+#querys{
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width: 230px;
+
+}
+
+#enterQ{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 140px;
+    background-color: deepskyblue;
+    border-style: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+#enterQ:hover{
+    background-color: rgb(150, 150, 150);
+}
+
+#help{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 140px;
+    background-color: deepskyblue;
+    border-style: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+#help:hover{
+    background-color: rgb(150, 150, 150);
+}
+
+
+a:link:hover {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: underline;
+    cursor: pointer;
+    cursor: hand;
+}
+input[type=submit], button {
+    cursor: pointer;
+    cursor: hand;
+}
+@media(max-width: 900px) {
+    html {
+        font-size: 14px !important;
+        width: 80% !important;
+    }
+}
+@media(max-width: 480px) {
+    html {
+        font-size: 12px !important;
+        width: 90% !important;
+    }
+}
+@media(max-width: 320px) {
+    html {
+        font-size: 12px !important;
+        width: 100% !important;
+    }
+}

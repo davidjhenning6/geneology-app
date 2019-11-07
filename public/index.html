@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Geneology App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CHANGE ME">
+    <meta name="keywords" content="CHANGE ME">
+    <meta name="author" content="David Henning">
+    
+    <!-- Load jquery, bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Custom CSS End -->
+</head>
+<body>
+    
+
+    <div id="page" class="container-fluid">
+
+      
+
+      <div id="header" class="row">
+        <div id="AppName" class="col-sm-2">
+          <h3 id="title" align="left" >Geneology App</h3>
+        </div>
+        <div class="col-sm-8">
+            <div id="statusDisplay">
+              <p> 
+              
+                
+              </p>
+            </div>
+          </div>
+      </div>
+
+      
+
+
+      <div class="row">
+        <div id="sideBar" class="col-sm-2">
+          <!--<p>file Log row</p>-->
+          
+            <button id="create" class="button"><h9>Create Simple<br>GEDCOM file<h9></button>
+          <input type="file" name="file" style="display: none;" id="file">
+
+        </div>
+        <div id="tableHeads" class="col-sm-10 ">
+          <table id="tSize" class="table">
+            <thead>
+              <tr>
+                <th>File name<br>(click to download)</th>
+                <th>Source</th>
+                <th>GEDC<br>version</th>
+                <th>Encoding</th>
+                <th>Number of<br>Individuals</th>
+                <th>Number of<br>Families</th>
+                <th>Submitter<br>Name</th>
+                <th>Submitter<br>Address</th>
+                
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+
+
+      <div id="fileRow" class="row">
+        <div id="sideBar" class="col-sm-2">
+          <form id="file-form" action='/upload' method="POST" enctype="multipart/form-data">
+            <button id="submit" type="submit" id="upload-button">Upload</button>
+            <input type="file" id="file-select" name="uploadFile" />
+          </form>
+          
+          
+         
+          
+          <!--<p>body row</p>-->
+        </div>
+        <div id="tableBodies" class="col-sm-10">
+          <table id="bSize" class="table">
+            <tbody id="GEDBody">
+              <tr>
+                <td id="fileName" ></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div id="sideBar" class="col-sm-2" >
+          
+          <!--<p>gedcom row</p>-->
+        </div>
+        <div id="tableHeads2" class="col-sm-10" >
+          <table id="tSize" class="table" >
+              <thead>
+                <tr>
+                  <th>Given Name</th>
+                  <th>Surname</th>
+                  <th>Sex</th>
+                  <th>Family Size</th>    
+                </tr>
+              </thead>
+          </table>
+        </div>
+      </div>
+
+
+        <div class="row">
+          <div id="sideBar" class="col-sm-2">
+            
+
+
+          <!-- <div class="dropdown">
+            <button id="filePicker" class="dropbtn">GEDCOM File<br>Select</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#"></a>
+             
+              
+            </div>
+          </div> -->
+
+           <select id="filePicker" name="file" multiple="multiple">
+              <option>Flowers</option>
+              
+            </select>
+
+
+            
+
+         
+
+
+            <!--<p>body row</p>-->
+          </div>
+          <div id="tableBodies2" class="col-sm-10" >
+            <table id="bSize" class="table" >
+              <tbody id="singleFile">
+                    <tr>
+                        <td>Select a File</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                     
+              </tbody>
+            </table>
+          </div>
+      </div>
+
+      <div id="an" class="row">
+        <div id="bleft" class="col-sm-2" >
+          <div class="dropdown">
+            <button id="add" class="button"><h9>Add Individual<h9></button>
+            <div id="myDropdown1" class="dropdown-content">
+              <a href="#"></a>
+              
+            </div>
+          </div>
+        </div>
+        <div id="searchBar" class="col-sm-3" >
+          <input id="field" type="text" name="firstname" placeholder="Given Name">
+          
+        </div>
+        <div id="searchBar" class="col-sm-3" >
+          <input id="field" type="text" name="firstname" placeholder="Surname">
+          
+        </div>
+        <div id="searchBar" class="col-sm-3" >
+          
+          
+        </div>
+        <div id="accept" class="col-sm-1" >
+          <button id="enter" class="button"><h9>Enter<h9></button>
+          
+        </div>
+      </div>
+
+
+
+      <div id="de" class="row">
+        <div id="bleft" class="col-sm-2" >
+          <div class="dropdown">
+            <button id="ascend" class="button"><h9>Get Ancestors<h9></button>
+            <div id="myDropdown2" class="dropdown-content">
+              <a href="#"></a>
+              
+            </div>
+          </div>
+        </div>
+        <div id="searchBar" class="col-sm-3" >
+          <input id="field" type="text" name="firstname" placeholder="Given Name">
+          
+        </div>
+        <div id="searchBar" class="col-sm-3" >
+          <input id="field" type="text" name="firstname" placeholder="Surname">
+          
+        </div>
+        <div id="searchBar" class="col-sm-3" >
+          <input id="field" type="text" name="firstname" placeholder="Max # of Generation">
+          
+        </div>
+        <div id="accept" class="col-sm-1" >
+          <button id="enter" class="button"><h9>Enter<h9></button>
+          
+        </div>
+      </div>
+
+
+      <div id="ad" class="row">
+        <div id="bleft" class="col-sm-2" >
+          <div class="dropup">
+             <button id="descend" class="button"><h9>Get Descendants<h9></button>
+            <div id="myDropUp" class="dropup-content">
+              <a href="#"></a>
+              
+            </div>
+          </div>
+        </div>
+        <div id="searchBar" class="col-sm-3" >
+          <input id="field" type="text" name="firstname" placeholder="Given Name">
+          
+        </div>
+        <div id="searchBar" class="col-sm-3" >
+          <input id="field" type="text" name="firstname" placeholder="Surname">
+          
+        </div>
+        <div id="searchBar" class="col-sm-3" >
+          <input id="field" type="text" name="firstname" placeholder="Max # of Generation">
+          
+        </div>
+        <div id="accept" class="col-sm-1" >
+          <button id="enter" class="button"><h9>Enter<h9></button>
+          
+        </div>
+      </div>
+
+
+      <div id="ad" class="row">
+        <div id="A4Header" class="col-sm-12" >
+          <h3 align="center">Assignment 4</h3>
+        </div>
+      </div>
+      <div id="ad" class="row">
+        <div id="A4Header" class="col-sm-12" >
+          <button id="gaia">Store All<br>Files</button>
+	  <button id="aether">Delete All<br>Files</button>
+	  <button id="getData">DataBase<br>Status</button>
+
+
+
+        </div>
+      </div>
+	<div id="ad" class="row">
+        <div id="A4query" class="col-sm-2" >
+	<button id="enterQ1" type="submit">Display All<br>Individuals</button>
+          
+
+        </div>
+
+	<div id="A4query" class="col-sm-3" >
+	<select id="queryPicker" name="query" multiple="multiple">              
+	      <option value="q2">Display Individuals From a File</option>
+              
+                          </select>
+
+          
+	
+
+        </div>
+	<div id="A4query" class="col-sm-3" >
+	  <input type="text" value="SELECT" id="querys" required>
+	  <button id="enterQ" type="submit">Submit</button>
+
+
+          
+	
+
+        </div>
+	<div id="A4query" class="col-sm-3" >
+	  
+	  <button id="help" type="submit">help</button>
+
+
+          
+	
+
+        </div>
+
+
+	</div>
+	<div id="ad" class="row">
+	<div id="A4query" class="col-sm-2" >
+	</div>
+	<div id="A4query" class="col-sm-8" >
+          
+	  <div id="statusDisplay2">
+              <p> 
+              
+                
+              </p>
+            </div>
+
+
+
+        </div>
+      </div>
+      <div id="ad" class="row">
+        <div id="A4Header" class="col-sm-12" >
+          <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> -->
+
+            <div id="id01" class="modal">
+              
+              
+                <!-- <div class="imgcontainer">
+                  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                  
+                </div> -->
+
+                <div id="trash" class="container">
+                  <label id="userI" for="user"><b>Username</b></label>
+                  <input type="text" placeholder="Enter Username" id="user" required>
+
+                  <label id="passwordI" for="password"><b>Password</b></label>
+                  <input type="text" placeholder="Enter Password" id="password" required>
+
+                  <label id="databaseI" for="database"><b>DataBase</b></label>
+                  <input type="text" placeholder="Enter DB Name" id="database" required>
+                    
+                  <button id="login" type="submit">Login</button>
+                </div>
+
+                <!-- <div class="container" style="background-color:#f1f1f1">
+                   <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                  <span class="psw">Forgot <a href="#">password?</a></span>
+                </div> -->
+              
+            </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- Leave me at the bottom of body -->
+    <script src="/index.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
