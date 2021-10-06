@@ -1,5 +1,5 @@
 # geneology-app
-cis2750 course project
+
 
 a file parser developed in C that can read in files that follow the gedcom format into memory and into json that can be used by the website
 
